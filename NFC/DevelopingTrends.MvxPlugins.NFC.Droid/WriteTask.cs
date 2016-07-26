@@ -1,20 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Android.App;
 using Android.Content;
-using Android.Content.PM;
 using Android.Nfc;
 using Android.Nfc.Tech;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid.Platform;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Core;
 using NdefMessage = NdefLibrary.Ndef.NdefMessage;
 
 namespace DevelopingTrends.MvxPlugins.NFC.Droid
@@ -23,7 +14,7 @@ namespace DevelopingTrends.MvxPlugins.NFC.Droid
     {
         private NdefMessage _messageToWrite;
 
-        protected override async void NewIntent(Cirrious.CrossCore.Core.MvxValueEventArgs<Intent> e)
+        protected override async void NewIntent(MvxValueEventArgs<Intent> e)
         {
             WriteResult writeResult = new WriteResult();
             writeResult.ReasonForFailure = FailureReasons.Unkown;

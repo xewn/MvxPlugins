@@ -3,9 +3,10 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.Nfc;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid.Platform;
-using Cirrious.CrossCore.Droid.Views;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Core;
+using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platform.Droid.Views;
 
 namespace DevelopingTrends.MvxPlugins.NFC.Droid
 {
@@ -118,7 +119,7 @@ namespace DevelopingTrends.MvxPlugins.NFC.Droid
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void droidEvents_NewIntentCalled(object sender, Cirrious.CrossCore.Core.MvxValueEventArgs<Intent> e)
+        private void droidEvents_NewIntentCalled(object sender,MvxValueEventArgs<Intent> e)
         {
 
             NewIntent(e);
@@ -134,7 +135,7 @@ namespace DevelopingTrends.MvxPlugins.NFC.Droid
             _nfcAdapter.DisableForegroundDispatch(TopActivity);
         }
 
-        protected abstract void NewIntent(Cirrious.CrossCore.Core.MvxValueEventArgs<Intent> e);
+        protected abstract void NewIntent(MvxValueEventArgs<Intent> e);
 
 
         protected string GetIdFromTag(Intent e)

@@ -1,19 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.Nfc;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid.Platform;
-using Cirrious.CrossCore.Droid.Views;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Platform.Core;
+using MvvmCross.Plugins.Messenger;
 
 namespace DevelopingTrends.MvxPlugins.NFC.Droid
 {
@@ -73,6 +61,11 @@ namespace DevelopingTrends.MvxPlugins.NFC.Droid
             
             var nfcMessage = new MessageReceived(tagId, message, this);
             _messenger.Publish(nfcMessage);
+        }
+
+        protected override void NewIntent(MvxValueEventArgs<Intent> e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

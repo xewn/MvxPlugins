@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using Android.Content;
-using Android.Content.Res;
+﻿using Android.Content;
 using Android.Nfc;
-using Cirrious.CrossCore.Core;
+using MvvmCross.Platform.Core;
 
 namespace DevelopingTrends.MvxPlugins.NFC.Droid
 {
